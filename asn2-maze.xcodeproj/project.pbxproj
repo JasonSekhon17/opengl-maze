@@ -13,6 +13,24 @@
 		96049F64223055CF00BF4B0B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96049F63223055CF00BF4B0B /* Assets.xcassets */; };
 		96049F67223055D000BF4B0B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96049F65223055D000BF4B0B /* LaunchScreen.storyboard */; };
 		96049F6A223055D000BF4B0B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 96049F69223055D000BF4B0B /* main.m */; };
+		96049F762230589C00BF4B0B /* maze.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 96049F742230589C00BF4B0B /* maze.cpp */; };
+		96049F772230589C00BF4B0B /* DisjointSet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 96049F752230589C00BF4B0B /* DisjointSet.cpp */; };
+		9649A78222347F5D00E9CF7B /* mazeProcessor.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9649A78122347F5D00E9CF7B /* mazeProcessor.mm */; };
+		9649A7842234A71400E9CF7B /* Vertex.glsl in Sources */ = {isa = PBXBuildFile; fileRef = 9649A7832234A71400E9CF7B /* Vertex.glsl */; };
+		9649A7862234A77200E9CF7B /* Fragment.glsl in Sources */ = {isa = PBXBuildFile; fileRef = 9649A7852234A77200E9CF7B /* Fragment.glsl */; };
+		9649A7922234B1FC00E9CF7B /* Node.m in Sources */ = {isa = PBXBuildFile; fileRef = 9649A7912234B1FC00E9CF7B /* Node.m */; };
+		9649A7962234B66200E9CF7B /* Director.m in Sources */ = {isa = PBXBuildFile; fileRef = 9649A7952234B66200E9CF7B /* Director.m */; };
+		9649A7992234B68800E9CF7B /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 9649A7982234B68800E9CF7B /* GameScene.m */; };
+		9649A79C2234C07500E9CF7B /* Floor.m in Sources */ = {isa = PBXBuildFile; fileRef = 9649A79B2234C07500E9CF7B /* Floor.m */; };
+		9649A79F2234C48200E9CF7B /* Floor.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9649A79E2234C48200E9CF7B /* Floor.jpg */; };
+		9649A7A22234E9AB00E9CF7B /* WestWall.m in Sources */ = {isa = PBXBuildFile; fileRef = 9649A7A12234E9AB00E9CF7B /* WestWall.m */; };
+		9649A7A42234EB2300E9CF7B /* WestWall.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9649A7A32234EB2300E9CF7B /* WestWall.jpg */; };
+		9649A7A72234F07200E9CF7B /* EastWall.m in Sources */ = {isa = PBXBuildFile; fileRef = 9649A7A62234F07200E9CF7B /* EastWall.m */; };
+		9649A7A92234F4EE00E9CF7B /* EastWall.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9649A7A82234F4EE00E9CF7B /* EastWall.jpg */; };
+		9649A7AC2234F58C00E9CF7B /* SouthWall.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9649A7AA2234F58C00E9CF7B /* SouthWall.jpg */; };
+		9649A7AD2234F58C00E9CF7B /* NorthWall.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9649A7AB2234F58C00E9CF7B /* NorthWall.jpg */; };
+		9649A7B02234F5D400E9CF7B /* NorthWall.m in Sources */ = {isa = PBXBuildFile; fileRef = 9649A7AF2234F5D400E9CF7B /* NorthWall.m */; };
+		9649A7B32234FA9D00E9CF7B /* SouthWall.m in Sources */ = {isa = PBXBuildFile; fileRef = 9649A7B22234FA9D00E9CF7B /* SouthWall.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +44,36 @@
 		96049F66223055D000BF4B0B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		96049F68223055D000BF4B0B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		96049F69223055D000BF4B0B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		96049F722230589B00BF4B0B /* maze.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = maze.h; sourceTree = "<group>"; };
+		96049F732230589C00BF4B0B /* DisjointSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DisjointSet.h; sourceTree = "<group>"; };
+		96049F742230589C00BF4B0B /* maze.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = maze.cpp; sourceTree = "<group>"; };
+		96049F752230589C00BF4B0B /* DisjointSet.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DisjointSet.cpp; sourceTree = "<group>"; };
+		9649A78022347F5D00E9CF7B /* mazeProcessor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mazeProcessor.h; sourceTree = "<group>"; };
+		9649A78122347F5D00E9CF7B /* mazeProcessor.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = mazeProcessor.mm; sourceTree = "<group>"; };
+		9649A7832234A71400E9CF7B /* Vertex.glsl */ = {isa = PBXFileReference; lastKnownFileType = text; path = Vertex.glsl; sourceTree = "<group>"; };
+		9649A7852234A77200E9CF7B /* Fragment.glsl */ = {isa = PBXFileReference; lastKnownFileType = text; path = Fragment.glsl; sourceTree = "<group>"; };
+		9649A7872234A90300E9CF7B /* Vertex.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Vertex.h; sourceTree = "<group>"; };
+		9649A7902234B1FC00E9CF7B /* Node.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Node.h; sourceTree = "<group>"; };
+		9649A7912234B1FC00E9CF7B /* Node.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Node.m; sourceTree = "<group>"; };
+		9649A7942234B66200E9CF7B /* Director.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Director.h; sourceTree = "<group>"; };
+		9649A7952234B66200E9CF7B /* Director.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Director.m; sourceTree = "<group>"; };
+		9649A7972234B68800E9CF7B /* GameScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameScene.h; sourceTree = "<group>"; };
+		9649A7982234B68800E9CF7B /* GameScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameScene.m; sourceTree = "<group>"; };
+		9649A79A2234C07500E9CF7B /* Floor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Floor.h; sourceTree = "<group>"; };
+		9649A79B2234C07500E9CF7B /* Floor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Floor.m; sourceTree = "<group>"; };
+		9649A79E2234C48200E9CF7B /* Floor.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Floor.jpg; sourceTree = "<group>"; };
+		9649A7A02234E9AB00E9CF7B /* WestWall.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WestWall.h; sourceTree = "<group>"; };
+		9649A7A12234E9AB00E9CF7B /* WestWall.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WestWall.m; sourceTree = "<group>"; };
+		9649A7A32234EB2300E9CF7B /* WestWall.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = WestWall.jpg; sourceTree = "<group>"; };
+		9649A7A52234F07200E9CF7B /* EastWall.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EastWall.h; sourceTree = "<group>"; };
+		9649A7A62234F07200E9CF7B /* EastWall.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EastWall.m; sourceTree = "<group>"; };
+		9649A7A82234F4EE00E9CF7B /* EastWall.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = EastWall.jpg; sourceTree = "<group>"; };
+		9649A7AA2234F58C00E9CF7B /* SouthWall.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = SouthWall.jpg; sourceTree = "<group>"; };
+		9649A7AB2234F58C00E9CF7B /* NorthWall.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = NorthWall.jpg; sourceTree = "<group>"; };
+		9649A7AE2234F5D400E9CF7B /* NorthWall.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NorthWall.h; sourceTree = "<group>"; };
+		9649A7AF2234F5D400E9CF7B /* NorthWall.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NorthWall.m; sourceTree = "<group>"; };
+		9649A7B12234FA9D00E9CF7B /* SouthWall.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SouthWall.h; sourceTree = "<group>"; };
+		9649A7B22234FA9D00E9CF7B /* SouthWall.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SouthWall.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,17 +106,95 @@
 		96049F59223055C700BF4B0B /* asn2-maze */ = {
 			isa = PBXGroup;
 			children = (
-				96049F5A223055C800BF4B0B /* AppDelegate.h */,
-				96049F5B223055C800BF4B0B /* AppDelegate.m */,
-				96049F5D223055C800BF4B0B /* ViewController.h */,
-				96049F5E223055C800BF4B0B /* ViewController.m */,
+				9649A79D2234C46E00E9CF7B /* Textures */,
+				9649A7932234B63800E9CF7B /* Scenes */,
+				9649A78F2234B1D600E9CF7B /* Nodes */,
+				9649A7882234A96C00E9CF7B /* Shaders */,
+				96049F712230588F00BF4B0B /* Maze Generation */,
+				96049F702230586100BF4B0B /* main */,
 				96049F60223055C800BF4B0B /* Main.storyboard */,
 				96049F63223055CF00BF4B0B /* Assets.xcassets */,
 				96049F65223055D000BF4B0B /* LaunchScreen.storyboard */,
 				96049F68223055D000BF4B0B /* Info.plist */,
-				96049F69223055D000BF4B0B /* main.m */,
 			);
 			path = "asn2-maze";
+			sourceTree = "<group>";
+		};
+		96049F702230586100BF4B0B /* main */ = {
+			isa = PBXGroup;
+			children = (
+				96049F5A223055C800BF4B0B /* AppDelegate.h */,
+				96049F5B223055C800BF4B0B /* AppDelegate.m */,
+				96049F5D223055C800BF4B0B /* ViewController.h */,
+				96049F5E223055C800BF4B0B /* ViewController.m */,
+				96049F69223055D000BF4B0B /* main.m */,
+			);
+			path = main;
+			sourceTree = "<group>";
+		};
+		96049F712230588F00BF4B0B /* Maze Generation */ = {
+			isa = PBXGroup;
+			children = (
+				96049F752230589C00BF4B0B /* DisjointSet.cpp */,
+				96049F732230589C00BF4B0B /* DisjointSet.h */,
+				96049F742230589C00BF4B0B /* maze.cpp */,
+				96049F722230589B00BF4B0B /* maze.h */,
+				9649A78022347F5D00E9CF7B /* mazeProcessor.h */,
+				9649A78122347F5D00E9CF7B /* mazeProcessor.mm */,
+			);
+			path = "Maze Generation";
+			sourceTree = "<group>";
+		};
+		9649A7882234A96C00E9CF7B /* Shaders */ = {
+			isa = PBXGroup;
+			children = (
+				9649A7832234A71400E9CF7B /* Vertex.glsl */,
+				9649A7852234A77200E9CF7B /* Fragment.glsl */,
+				9649A7872234A90300E9CF7B /* Vertex.h */,
+			);
+			path = Shaders;
+			sourceTree = "<group>";
+		};
+		9649A78F2234B1D600E9CF7B /* Nodes */ = {
+			isa = PBXGroup;
+			children = (
+				9649A7902234B1FC00E9CF7B /* Node.h */,
+				9649A7912234B1FC00E9CF7B /* Node.m */,
+				9649A79A2234C07500E9CF7B /* Floor.h */,
+				9649A79B2234C07500E9CF7B /* Floor.m */,
+				9649A7A02234E9AB00E9CF7B /* WestWall.h */,
+				9649A7A12234E9AB00E9CF7B /* WestWall.m */,
+				9649A7A52234F07200E9CF7B /* EastWall.h */,
+				9649A7A62234F07200E9CF7B /* EastWall.m */,
+				9649A7AE2234F5D400E9CF7B /* NorthWall.h */,
+				9649A7AF2234F5D400E9CF7B /* NorthWall.m */,
+				9649A7B12234FA9D00E9CF7B /* SouthWall.h */,
+				9649A7B22234FA9D00E9CF7B /* SouthWall.m */,
+			);
+			path = Nodes;
+			sourceTree = "<group>";
+		};
+		9649A7932234B63800E9CF7B /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				9649A7942234B66200E9CF7B /* Director.h */,
+				9649A7952234B66200E9CF7B /* Director.m */,
+				9649A7972234B68800E9CF7B /* GameScene.h */,
+				9649A7982234B68800E9CF7B /* GameScene.m */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		9649A79D2234C46E00E9CF7B /* Textures */ = {
+			isa = PBXGroup;
+			children = (
+				9649A7A32234EB2300E9CF7B /* WestWall.jpg */,
+				9649A7AB2234F58C00E9CF7B /* NorthWall.jpg */,
+				9649A7AA2234F58C00E9CF7B /* SouthWall.jpg */,
+				9649A7A82234F4EE00E9CF7B /* EastWall.jpg */,
+				9649A79E2234C48200E9CF7B /* Floor.jpg */,
+			);
+			path = Textures;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -128,9 +254,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9649A7A92234F4EE00E9CF7B /* EastWall.jpg in Resources */,
 				96049F67223055D000BF4B0B /* LaunchScreen.storyboard in Resources */,
 				96049F64223055CF00BF4B0B /* Assets.xcassets in Resources */,
+				9649A79F2234C48200E9CF7B /* Floor.jpg in Resources */,
+				9649A7AC2234F58C00E9CF7B /* SouthWall.jpg in Resources */,
 				96049F62223055C800BF4B0B /* Main.storyboard in Resources */,
+				9649A7A42234EB2300E9CF7B /* WestWall.jpg in Resources */,
+				9649A7AD2234F58C00E9CF7B /* NorthWall.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,9 +272,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9649A7B02234F5D400E9CF7B /* NorthWall.m in Sources */,
+				9649A79C2234C07500E9CF7B /* Floor.m in Sources */,
+				9649A7842234A71400E9CF7B /* Vertex.glsl in Sources */,
+				9649A7962234B66200E9CF7B /* Director.m in Sources */,
 				96049F5F223055C800BF4B0B /* ViewController.m in Sources */,
 				96049F6A223055D000BF4B0B /* main.m in Sources */,
+				9649A7992234B68800E9CF7B /* GameScene.m in Sources */,
+				96049F762230589C00BF4B0B /* maze.cpp in Sources */,
 				96049F5C223055C800BF4B0B /* AppDelegate.m in Sources */,
+				9649A7B32234FA9D00E9CF7B /* SouthWall.m in Sources */,
+				9649A7A72234F07200E9CF7B /* EastWall.m in Sources */,
+				9649A7A22234E9AB00E9CF7B /* WestWall.m in Sources */,
+				9649A7922234B1FC00E9CF7B /* Node.m in Sources */,
+				96049F772230589C00BF4B0B /* DisjointSet.cpp in Sources */,
+				9649A78222347F5D00E9CF7B /* mazeProcessor.mm in Sources */,
+				9649A7862234A77200E9CF7B /* Fragment.glsl in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,6 +432,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = A2SBKB36F6;
 				INFOPLIST_FILE = "asn2-maze/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -305,6 +450,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = A2SBKB36F6;
 				INFOPLIST_FILE = "asn2-maze/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
