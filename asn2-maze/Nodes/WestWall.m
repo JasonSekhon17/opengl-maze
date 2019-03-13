@@ -21,12 +21,6 @@ const Vertex Vertices0[] = {
     {{1, -1, -1}, {1, 0}, {1, 0, 0}}, // 0
 };
 
-const GLubyte Indices0[] = {
-    // Right
-    0, 1, 2,
-    2, 3, 0
-};
-
 - (instancetype)initWithShader:(GLKBaseEffect *)shader {
     
     if ((self = [super initWithName:"WestWall" shader:shader
@@ -36,7 +30,7 @@ const GLubyte Indices0[] = {
         self.diffuseColor = GLKVector4Make(1, 1, 1, 1);
         self.specularColor = GLKVector4Make(1, 1, 1, 1);
         self.shininess = 10;
-        self.scale = 5;
+        self.scale = 10;
         
         [self loadTexture:@"WestWall.jpg"];
     }

@@ -13,17 +13,32 @@
 
 @interface ViewController () {
     GLKBaseEffect* _shader;
+    __weak IBOutlet UISlider *_rSlider;
+    __weak IBOutlet UISlider *_gSlider;
+    __weak IBOutlet UISlider *_bSlider;
 }
 
 @end
 
-@implementation ViewController
+@implementation ViewController {
+    BOOL toggleDay;
+    BOOL toggleFog;
+    float red;
+    float green;
+    float blue;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     GLKView *view = (GLKView *)self.view;
     view.drawableDepthFormat = GLKViewDrawableDepthFormat24;
     view.context = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES2];
+    
+    toggleDay = TRUE;
+    toggleFog = FALSE;
+    red = .5;
+    green = .5;
+    blue = .5;
     
     [EAGLContext setCurrentContext:view.context];
     glViewport(0, 0, self.view.frame.size.width, self.view.frame.size.height);
@@ -32,7 +47,7 @@
 
 - (void) setupScene{
     _shader = [[GLKBaseEffect alloc] init];
-    _shader.transform.projectionMatrix = GLKMatrix4MakePerspective(GLKMathRadiansToDegrees(85.0), self.view.frame.size.width/self.view.frame.size.height, 1, 150);
+    _shader.transform.projectionMatrix = GLKMatrix4MakePerspective(GLKMathDegreesToRadians(85.0), self.view.frame.size.width/self.view.frame.size.height, 1, 300);
     
     
     [Director sharedInstance].scene = [[GameScene alloc] initWithShader:_shader];
@@ -44,11 +59,22 @@
 }
     
 - (void)glkView:(GLKView *)view drawInRect:(CGRect)rect {
-    float amount = 0.25 * sin(CACurrentMediaTime()) + 0.75;
-    float amount2 = 0.25 * sin(CACurrentMediaTime()+M_PI_4) + 0.75;
-    float amount3 = 0.25 * sin(CACurrentMediaTime()+M_PI_2) + 0.75;
     
-    glClearColor(amount, amount2, amount3, 1.0);
+    if (toggleDay) {
+        _shader.light0.position = GLKVector4Make(1, 1, 1, 0);
+        glClearColor(.5, .5, 1, 1.0);
+    } else {
+        _shader.light0.position = GLKVector4Make(0, 0, 0, 0);
+        glClearColor(.1, .1, .25, 1.0);
+    }
+    if (toggleFog) {
+        _shader.fog.enabled = GL_TRUE;
+        _shader.fog.mode = 1;
+        _shader.fog.density = .025;
+        _shader.fog.color = GLKVector4Make(red, green, blue, .1);
+    } else {
+        _shader.fog.enabled = GL_FALSE;
+    }
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     glEnable(GL_DEPTH_TEST);
     glEnable(GL_CULL_FACE);
@@ -56,5 +82,33 @@
     [[Director sharedInstance].scene renderWithParentModelViewMatrix:GLKMatrix4Identity];
 }
 
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    [[Director sharedInstance].scene touchesBegan:touches withEvent:event];
+}
+
+- (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
+    [[Director sharedInstance].scene touchesMoved:touches withEvent:event];
+}
+
+- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
+    [[Director sharedInstance].scene touchesEnded:touches withEvent:event];
+}
+
+- (IBAction)dayNightBtn:(id)sender {
+    toggleDay = !toggleDay;
+}
+
+- (IBAction)fogBtn:(id)sender {
+    toggleFog = !toggleFog;
+}
+- (IBAction)rSlider:(id)sender {
+    red = [_rSlider value ];
+}
+- (IBAction)gSlider:(id)sender {
+    green = [_gSlider value];
+}
+- (IBAction)bSlider:(id)sender {
+    blue = [_bSlider value];
+}
 
 @end

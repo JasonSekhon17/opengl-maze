@@ -35,5 +35,9 @@
 - (void)updateWithDelta:(GLfloat)aDelta;
 - (void)loadTexture:(NSString *)filename;
 - (CGRect)boundingBoxWithModelViewMatrix:(GLKMatrix4)parentModelViewMatrix;
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event;
+- (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event;
+- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event;
+
 
 @end

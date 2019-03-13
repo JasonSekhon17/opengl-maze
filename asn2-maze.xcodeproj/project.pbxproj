@@ -31,6 +31,8 @@
 		9649A7AD2234F58C00E9CF7B /* NorthWall.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9649A7AB2234F58C00E9CF7B /* NorthWall.jpg */; };
 		9649A7B02234F5D400E9CF7B /* NorthWall.m in Sources */ = {isa = PBXBuildFile; fileRef = 9649A7AF2234F5D400E9CF7B /* NorthWall.m */; };
 		9649A7B32234FA9D00E9CF7B /* SouthWall.m in Sources */ = {isa = PBXBuildFile; fileRef = 9649A7B22234FA9D00E9CF7B /* SouthWall.m */; };
+		9649A7BC2238912700E9CF7B /* Cube.m in Sources */ = {isa = PBXBuildFile; fileRef = 9649A7BB2238912700E9CF7B /* Cube.m */; };
+		9649A7C1223892AB00E9CF7B /* crate.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9649A7C0223892AB00E9CF7B /* crate.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +76,9 @@
 		9649A7AF2234F5D400E9CF7B /* NorthWall.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NorthWall.m; sourceTree = "<group>"; };
 		9649A7B12234FA9D00E9CF7B /* SouthWall.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SouthWall.h; sourceTree = "<group>"; };
 		9649A7B22234FA9D00E9CF7B /* SouthWall.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SouthWall.m; sourceTree = "<group>"; };
+		9649A7BA2238912700E9CF7B /* Cube.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Cube.h; sourceTree = "<group>"; };
+		9649A7BB2238912700E9CF7B /* Cube.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Cube.m; sourceTree = "<group>"; };
+		9649A7C0223892AB00E9CF7B /* crate.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = crate.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +175,8 @@
 				9649A7AF2234F5D400E9CF7B /* NorthWall.m */,
 				9649A7B12234FA9D00E9CF7B /* SouthWall.h */,
 				9649A7B22234FA9D00E9CF7B /* SouthWall.m */,
+				9649A7BA2238912700E9CF7B /* Cube.h */,
+				9649A7BB2238912700E9CF7B /* Cube.m */,
 			);
 			path = Nodes;
 			sourceTree = "<group>";
@@ -188,6 +195,7 @@
 		9649A79D2234C46E00E9CF7B /* Textures */ = {
 			isa = PBXGroup;
 			children = (
+				9649A7C0223892AB00E9CF7B /* crate.jpg */,
 				9649A7A32234EB2300E9CF7B /* WestWall.jpg */,
 				9649A7AB2234F58C00E9CF7B /* NorthWall.jpg */,
 				9649A7AA2234F58C00E9CF7B /* SouthWall.jpg */,
@@ -254,6 +262,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9649A7C1223892AB00E9CF7B /* crate.jpg in Resources */,
 				9649A7A92234F4EE00E9CF7B /* EastWall.jpg in Resources */,
 				96049F67223055D000BF4B0B /* LaunchScreen.storyboard in Resources */,
 				96049F64223055CF00BF4B0B /* Assets.xcassets in Resources */,
@@ -283,6 +292,7 @@
 				96049F5C223055C800BF4B0B /* AppDelegate.m in Sources */,
 				9649A7B32234FA9D00E9CF7B /* SouthWall.m in Sources */,
 				9649A7A72234F07200E9CF7B /* EastWall.m in Sources */,
+				9649A7BC2238912700E9CF7B /* Cube.m in Sources */,
 				9649A7A22234E9AB00E9CF7B /* WestWall.m in Sources */,
 				9649A7922234B1FC00E9CF7B /* Node.m in Sources */,
 				96049F772230589C00BF4B0B /* DisjointSet.cpp in Sources */,
