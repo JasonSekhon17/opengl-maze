@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <GLKit/GLKit.h>
+#import "mazeProcessor.h"
 
 @class Node;
 
@@ -19,6 +20,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong) UIView *view;
 @property (nonatomic, strong) Node *scene;
+@property (nonatomic, strong) mazeProcessor *mazeObject;
 
 @end
 

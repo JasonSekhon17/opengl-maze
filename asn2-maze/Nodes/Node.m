@@ -94,18 +94,19 @@
         _shader.light0.enabled = GL_TRUE;
         _shader.light0.diffuseColor = _diffuseColor;
         
-        _shader.light1.enabled = GL_TRUE;
-        _shader.light1.position = GLKVector4Make(1, 1, 1, 1);
-        _shader.light1.spotDirection = GLKVector3Make(1, 0, 0);
-        _shader.light1.spotCutoff = 179;
+        //_shader.light1.enabled = GL_TRUE;
+        //_shader.light1.position = GLKVector4Make(1.5, 0, 0, 1);
+        _shader.light1.constantAttenuation = 1;
+        _shader.light1.linearAttenuation = .045;
+        _shader.light1.quadraticAttenuation = .0075;
         _shader.light1.diffuseColor = _diffuseColor;
         
         _shader.light2.enabled = GL_FALSE;
         _shader.light2.diffuseColor = _diffuseColor;
         
-        _shader.light0.ambientColor = GLKVector4Make(1, 1, 1, 1.0);
+        _shader.light0.ambientColor = GLKVector4Make(.5, .5, .5, 1.0);
         _shader.light0.specularColor = _specularColor;
-        _shader.light1.ambientColor = GLKVector4Make(.5, .5, .5, 1.0);
+        _shader.light1.ambientColor = GLKVector4Make(1, 1, 1, 1.0);
         _shader.light1.specularColor = _specularColor;
         _shader.light2.ambientColor = GLKVector4Make(.25, .25, .5, 1.0);
         _shader.light2.specularColor = _specularColor;

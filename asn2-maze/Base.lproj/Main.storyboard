@@ -79,6 +79,21 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hxx-De-XbI">
+                                <rect key="frame" x="292" y="617" width="67" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                                <state key="normal" title="Flashlight"/>
+                                <connections>
+                                    <action selector="flashlightBtn:" destination="feX-qC-kUD" eventType="touchUpInside" id="rl2-3t-TXK"/>
+                                </connections>
+                            </button>
+                            <containerView opaque="NO" alpha="0.90000000000000002" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ygN-05-7eW">
+                                <rect key="frame" x="50" y="233" width="275" height="200"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <connections>
+                                    <segue destination="yjI-Ps-cyt" kind="embed" id="g2f-4s-3Qv"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <connections>
                             <outlet property="delegate" destination="feX-qC-kUD" id="Jea-6J-1aK"/>
@@ -86,13 +101,34 @@
                     </glkView>
                     <connections>
                         <outlet property="_bSlider" destination="wam-Bl-qdl" id="Pgm-7z-ort"/>
+                        <outlet property="_console" destination="ygN-05-7eW" id="uPM-nQ-tpT"/>
                         <outlet property="_gSlider" destination="nke-g8-2fW" id="awq-lb-HRw"/>
                         <outlet property="_rSlider" destination="x3J-oV-kox" id="iOb-pD-Cdh"/>
                     </connections>
                 </glkViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WBl-Rl-5Gs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-762" y="12"/>
+            <point key="canvasLocation" x="-762.39999999999998" y="11.244377811094454"/>
+        </scene>
+        <!--GLKit View Controller-->
+        <scene sceneID="qAd-9H-VIX">
+            <objects>
+                <glkViewController preferredFramesPerSecond="30" id="yjI-Ps-cyt" customClass="ConsoleViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="mF7-Di-UuY"/>
+                        <viewControllerLayoutGuide type="bottom" id="Q4l-ld-AAG"/>
+                    </layoutGuides>
+                    <glkView key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" enableSetNeedsDisplay="NO" id="fX4-JW-H8L">
+                        <rect key="frame" x="0.0" y="0.0" width="275" height="200"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <connections>
+                            <outlet property="delegate" destination="yjI-Ps-cyt" id="Gnx-sj-2gR"/>
+                        </connections>
+                    </glkView>
+                </glkViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x50-Tx-n0a" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="54" y="82"/>
         </scene>
     </scenes>
 </document>

@@ -20,6 +20,7 @@
 
 - (instancetype)init {
     self = [super init];
+    _mazeObject = [[mazeProcessor alloc] init];
     return self;
 }
 

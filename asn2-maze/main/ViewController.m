@@ -17,12 +17,14 @@
     __weak IBOutlet UISlider *_gSlider;
     __weak IBOutlet UISlider *_bSlider;
 }
+@property (weak, nonatomic) IBOutlet UIView *_console;
 
 @end
 
 @implementation ViewController {
     BOOL toggleDay;
     BOOL toggleFog;
+    BOOL toggleFlashlight;
     float red;
     float green;
     float blue;
@@ -30,6 +32,19 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    __console.hidden = true;
+    
+    
+    UITapGestureRecognizer *twoTapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTapGesture:)];
+    twoTapGesture.numberOfTapsRequired = 2;
+    twoTapGesture.numberOfTouchesRequired = 2;
+    [self.view addGestureRecognizer:twoTapGesture];
+    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTapGesture:)];
+    tapGesture.numberOfTapsRequired = 2;
+    tapGesture.numberOfTouchesRequired = 1;
+    [self.view addGestureRecognizer:tapGesture];
+    
     GLKView *view = (GLKView *)self.view;
     view.drawableDepthFormat = GLKViewDrawableDepthFormat24;
     view.context = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES2];
@@ -48,7 +63,6 @@
 - (void) setupScene{
     _shader = [[GLKBaseEffect alloc] init];
     _shader.transform.projectionMatrix = GLKMatrix4MakePerspective(GLKMathDegreesToRadians(85.0), self.view.frame.size.width/self.view.frame.size.height, 1, 300);
-    
     
     [Director sharedInstance].scene = [[GameScene alloc] initWithShader:_shader];
     [Director sharedInstance].view = self.view;
@@ -75,6 +89,11 @@
     } else {
         _shader.fog.enabled = GL_FALSE;
     }
+    if (toggleFlashlight) {
+        _shader.light1.enabled = GL_TRUE;
+    } else {
+        _shader.light1.enabled = GL_FALSE;
+    }
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     glEnable(GL_DEPTH_TEST);
     glEnable(GL_CULL_FACE);
@@ -94,6 +113,14 @@
     [[Director sharedInstance].scene touchesEnded:touches withEvent:event];
 }
 
+- (void)handleTapGesture:(UITapGestureRecognizer *)sender {
+    if (sender.state == UIGestureRecognizerStateRecognized && sender.numberOfTouches == 1) {
+        [(GameScene *)[Director sharedInstance].scene resetPosition];
+    } else if (sender.state == UIGestureRecognizerStateRecognized && sender.numberOfTouches == 2) {
+        __console.hidden = !__console.hidden;
+    }
+}
+
 - (IBAction)dayNightBtn:(id)sender {
     toggleDay = !toggleDay;
 }
@@ -109,6 +136,9 @@
 }
 - (IBAction)bSlider:(id)sender {
     blue = [_bSlider value];
+}
+- (IBAction)flashlightBtn:(id)sender {
+    toggleFlashlight = !toggleFlashlight;
 }
 
 @end

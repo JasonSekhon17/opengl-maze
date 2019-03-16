@@ -33,6 +33,10 @@
 		9649A7B32234FA9D00E9CF7B /* SouthWall.m in Sources */ = {isa = PBXBuildFile; fileRef = 9649A7B22234FA9D00E9CF7B /* SouthWall.m */; };
 		9649A7BC2238912700E9CF7B /* Cube.m in Sources */ = {isa = PBXBuildFile; fileRef = 9649A7BB2238912700E9CF7B /* Cube.m */; };
 		9649A7C1223892AB00E9CF7B /* crate.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9649A7C0223892AB00E9CF7B /* crate.jpg */; };
+		96B8F6E8223B986700C6702F /* ConsoleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96B8F6E7223B986700C6702F /* ConsoleViewController.m */; };
+		96B8F6EB223BA17B00C6702F /* ConsoleScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 96B8F6EA223BA17B00C6702F /* ConsoleScene.m */; };
+		96B8F6F4223C715D00C6702F /* PlayerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 96B8F6F3223C715D00C6702F /* PlayerModel.m */; };
+		96B8F6F6223C71C800C6702F /* redPlayer.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 96B8F6F5223C71C800C6702F /* redPlayer.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -79,6 +83,13 @@
 		9649A7BA2238912700E9CF7B /* Cube.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Cube.h; sourceTree = "<group>"; };
 		9649A7BB2238912700E9CF7B /* Cube.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Cube.m; sourceTree = "<group>"; };
 		9649A7C0223892AB00E9CF7B /* crate.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = crate.jpg; sourceTree = "<group>"; };
+		96B8F6E6223B986700C6702F /* ConsoleViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ConsoleViewController.h; sourceTree = "<group>"; };
+		96B8F6E7223B986700C6702F /* ConsoleViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ConsoleViewController.m; sourceTree = "<group>"; };
+		96B8F6E9223BA17B00C6702F /* ConsoleScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ConsoleScene.h; sourceTree = "<group>"; };
+		96B8F6EA223BA17B00C6702F /* ConsoleScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ConsoleScene.m; sourceTree = "<group>"; };
+		96B8F6F2223C715D00C6702F /* PlayerModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlayerModel.h; sourceTree = "<group>"; };
+		96B8F6F3223C715D00C6702F /* PlayerModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlayerModel.m; sourceTree = "<group>"; };
+		96B8F6F5223C71C800C6702F /* redPlayer.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = redPlayer.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +144,8 @@
 				96049F5D223055C800BF4B0B /* ViewController.h */,
 				96049F5E223055C800BF4B0B /* ViewController.m */,
 				96049F69223055D000BF4B0B /* main.m */,
+				96B8F6E6223B986700C6702F /* ConsoleViewController.h */,
+				96B8F6E7223B986700C6702F /* ConsoleViewController.m */,
 			);
 			path = main;
 			sourceTree = "<group>";
@@ -177,6 +190,8 @@
 				9649A7B22234FA9D00E9CF7B /* SouthWall.m */,
 				9649A7BA2238912700E9CF7B /* Cube.h */,
 				9649A7BB2238912700E9CF7B /* Cube.m */,
+				96B8F6F2223C715D00C6702F /* PlayerModel.h */,
+				96B8F6F3223C715D00C6702F /* PlayerModel.m */,
 			);
 			path = Nodes;
 			sourceTree = "<group>";
@@ -188,6 +203,8 @@
 				9649A7952234B66200E9CF7B /* Director.m */,
 				9649A7972234B68800E9CF7B /* GameScene.h */,
 				9649A7982234B68800E9CF7B /* GameScene.m */,
+				96B8F6E9223BA17B00C6702F /* ConsoleScene.h */,
+				96B8F6EA223BA17B00C6702F /* ConsoleScene.m */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -195,6 +212,7 @@
 		9649A79D2234C46E00E9CF7B /* Textures */ = {
 			isa = PBXGroup;
 			children = (
+				96B8F6F5223C71C800C6702F /* redPlayer.jpg */,
 				9649A7C0223892AB00E9CF7B /* crate.jpg */,
 				9649A7A32234EB2300E9CF7B /* WestWall.jpg */,
 				9649A7AB2234F58C00E9CF7B /* NorthWall.jpg */,
@@ -268,6 +286,7 @@
 				96049F64223055CF00BF4B0B /* Assets.xcassets in Resources */,
 				9649A79F2234C48200E9CF7B /* Floor.jpg in Resources */,
 				9649A7AC2234F58C00E9CF7B /* SouthWall.jpg in Resources */,
+				96B8F6F6223C71C800C6702F /* redPlayer.jpg in Resources */,
 				96049F62223055C800BF4B0B /* Main.storyboard in Resources */,
 				9649A7A42234EB2300E9CF7B /* WestWall.jpg in Resources */,
 				9649A7AD2234F58C00E9CF7B /* NorthWall.jpg in Resources */,
@@ -290,13 +309,16 @@
 				9649A7992234B68800E9CF7B /* GameScene.m in Sources */,
 				96049F762230589C00BF4B0B /* maze.cpp in Sources */,
 				96049F5C223055C800BF4B0B /* AppDelegate.m in Sources */,
+				96B8F6EB223BA17B00C6702F /* ConsoleScene.m in Sources */,
 				9649A7B32234FA9D00E9CF7B /* SouthWall.m in Sources */,
 				9649A7A72234F07200E9CF7B /* EastWall.m in Sources */,
 				9649A7BC2238912700E9CF7B /* Cube.m in Sources */,
 				9649A7A22234E9AB00E9CF7B /* WestWall.m in Sources */,
 				9649A7922234B1FC00E9CF7B /* Node.m in Sources */,
+				96B8F6E8223B986700C6702F /* ConsoleViewController.m in Sources */,
 				96049F772230589C00BF4B0B /* DisjointSet.cpp in Sources */,
 				9649A78222347F5D00E9CF7B /* mazeProcessor.mm in Sources */,
+				96B8F6F4223C715D00C6702F /* PlayerModel.m in Sources */,
 				9649A7862234A77200E9CF7B /* Fragment.glsl in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

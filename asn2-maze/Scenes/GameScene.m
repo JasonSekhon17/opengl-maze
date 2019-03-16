@@ -28,6 +28,7 @@
     SouthWall *_southWall;
     mazeProcessor *mazeObject;
     NSMutableArray *_cells;
+    NSMutableArray *_originalObjects;
     CGPoint _previousTouchLocation;
     GLKBaseEffect *_shader;
 }
@@ -35,62 +36,66 @@
 - (instancetype)initWithShader:(GLKBaseEffect *)shader {
     if ((self = [super initWithName:"GameScene" shader:shader vertices:nil vertexCount:0])) {
         _shader = shader;
+        _shader.light1.position = GLKVector4Make(0, 0, -1, 1);
         // Create initial scene position (i.e. camera)
         _gameArea = CGSizeMake(40, 80);
         //_sceneOffset = _gameArea.height/2 / tanf(GLKMathRadiansToDegrees(80.0/2));
         //self.position = GLKVector3Make(0, -_gameArea.height/2, -_sceneOffset);
         self.position = GLKVector3Make(0, -_gameArea.height/2 + 20, -20);
         self.rotationY = GLKMathDegreesToRadians(90);
-        
-        mazeObject = [[mazeProcessor alloc] init];
-        for (int i = 0; i < [mazeObject getRows]; i++) {
-            for (int j = 0; j < [mazeObject getCols]; j++) {
-                _floor = [[Floor alloc] initWithShader:shader];
-                _floor.position = GLKVector3Make((i * _floor.scale * 2), 0, (j * _floor.scale * 2));
-                [self.children addObject:_floor];
-                [_cells addObject:_floor];
-                if (i == 0 && j == 0) {
-                    _cube = [[Cube alloc] initWithShader:shader];
-                    _cube.position = GLKVector3Make(0, -_gameArea.height/2 + 60, _floor.position.z);
-                    [self.children addObject:_cube];
-                }
-                if ([mazeObject getCellAtRow:i col:j].northWallPresent) {
-                    _eastWall = [[EastWall alloc] initWithShader:shader];
-                    _eastWall.position = GLKVector3Make((i * _eastWall.scale * 2), _floor.scale*2, (j * _eastWall.scale * 2));
-                    [self.children addObject:_eastWall];
-                    _westWall = [[WestWall alloc] initWithShader:shader];
-                    _westWall.position = GLKVector3Make((i * _westWall.scale * 2) - (_floor.scale * 2), _floor.scale*2, (j * _westWall.scale * 2));
-                    [self.children addObject:_westWall];
-                }
-                if ([mazeObject getCellAtRow:i col:j].southWallPresent) {
-                    _westWall = [[WestWall alloc] initWithShader:shader];
-                    _westWall.position = GLKVector3Make((i * _westWall.scale * 2), _floor.scale*2, (j * _westWall.scale * 2));
-                    [self.children addObject:_westWall];
-                    _eastWall = [[EastWall alloc] initWithShader:shader];
-                    _eastWall.position = GLKVector3Make((i * _eastWall.scale * 2) + (_floor.scale * 2), _floor.scale*2, (j * _eastWall.scale * 2));
-                    [self.children addObject:_eastWall];
-                }
-                if ([mazeObject getCellAtRow:i col:j].eastWallPresent) {
-                    _southWall = [[SouthWall alloc] initWithShader:shader];
-                    _southWall.position = GLKVector3Make((i * _southWall.scale * 2), _floor.scale*2, (j * _southWall.scale * 2));
-                    [self.children addObject:_southWall];
-                    _northWall = [[NorthWall alloc] initWithShader:shader];
-                    _northWall.position = GLKVector3Make((i * _northWall.scale * 2), _floor.scale*2, (j * _northWall.scale * 2) + (_floor.scale * 2));
-                    [self.children addObject:_northWall];
-                }
-                if ([mazeObject getCellAtRow:i col:j].westWallPresent) {
-                    _northWall = [[NorthWall alloc] initWithShader:shader];
-                    _northWall.position = GLKVector3Make((i * _northWall.scale * 2), _floor.scale*2, (j * _northWall.scale * 2));
-                    [self.children addObject:_northWall];
-                    _southWall = [[SouthWall alloc] initWithShader:shader];
-                    _southWall.position = GLKVector3Make((i * _southWall.scale * 2), _floor.scale*2, (j * _southWall.scale * 2) - (_floor.scale * 2));
-                    [self.children addObject:_southWall];
-                }
-            }
-        }
-        
+        mazeObject = [Director sharedInstance].mazeObject;
+        [self createMaze];
     }
     return self;
+}
+
+- (void)createMaze {
+    printf("%lu \n", self.children.count);
+    for (int i = 0; i < [mazeObject getRows]; i++) {
+        for (int j = 0; j < [mazeObject getCols]; j++) {
+            _floor = [[Floor alloc] initWithShader:_shader];
+            _floor.position = GLKVector3Make((i * _floor.scale * 2), 0, (j * _floor.scale * 2));
+            [self.children addObject:_floor];
+            [_cells addObject:_floor];
+            if (i == 0 && j == 0) {
+                _cube = [[Cube alloc] initWithShader:_shader];
+                _cube.position = GLKVector3Make(0, -_gameArea.height/2 + 60, _floor.position.z);
+                [self.children addObject:_cube];
+            }
+            if ([mazeObject getCellAtRow:i col:j].northWallPresent) {
+                _eastWall = [[EastWall alloc] initWithShader:_shader];
+                _eastWall.position = GLKVector3Make((i * _eastWall.scale * 2), _floor.scale*2, (j * _eastWall.scale * 2));
+                [self.children addObject:_eastWall];
+                _westWall = [[WestWall alloc] initWithShader:_shader];
+                _westWall.position = GLKVector3Make((i * _westWall.scale * 2) - (_floor.scale * 2), _floor.scale*2, (j * _westWall.scale * 2));
+                [self.children addObject:_westWall];
+            }
+            if ([mazeObject getCellAtRow:i col:j].southWallPresent) {
+                _westWall = [[WestWall alloc] initWithShader:_shader];
+                _westWall.position = GLKVector3Make((i * _westWall.scale * 2), _floor.scale*2, (j * _westWall.scale * 2));
+                [self.children addObject:_westWall];
+                _eastWall = [[EastWall alloc] initWithShader:_shader];
+                _eastWall.position = GLKVector3Make((i * _eastWall.scale * 2) + (_floor.scale * 2), _floor.scale*2, (j * _eastWall.scale * 2));
+                [self.children addObject:_eastWall];
+            }
+            if ([mazeObject getCellAtRow:i col:j].eastWallPresent) {
+                _southWall = [[SouthWall alloc] initWithShader:_shader];
+                _southWall.position = GLKVector3Make((i * _southWall.scale * 2), _floor.scale*2, (j * _southWall.scale * 2));
+                [self.children addObject:_southWall];
+                _northWall = [[NorthWall alloc] initWithShader:_shader];
+                _northWall.position = GLKVector3Make((i * _northWall.scale * 2), _floor.scale*2, (j * _northWall.scale * 2) + (_floor.scale * 2));
+                [self.children addObject:_northWall];
+            }
+            if ([mazeObject getCellAtRow:i col:j].westWallPresent) {
+                _northWall = [[NorthWall alloc] initWithShader:_shader];
+                _northWall.position = GLKVector3Make((i * _northWall.scale * 2), _floor.scale*2, (j * _northWall.scale * 2));
+                [self.children addObject:_northWall];
+                _southWall = [[SouthWall alloc] initWithShader:_shader];
+                _southWall.position = GLKVector3Make((i * _southWall.scale * 2), _floor.scale*2, (j * _southWall.scale * 2) - (_floor.scale * 2));
+                [self.children addObject:_southWall];
+            }
+        }
+    }
 }
 
 - (CGPoint)touchLocationToGameArea:(CGPoint)touchLocation {
@@ -141,8 +146,8 @@
         self.position = GLKVector3Make(cosYaw, self.position.y, sinYaw);
     } else {
         for (int i = 0; i < self.children.count; i++){
-            Node *child =(Node *)[self.children objectAtIndex:i];
-            child.position = GLKVector3Make(child.position.x + (diff.y*sinf(GLKMathRadiansToDegrees(self.rotationY))), child.position.y, child.position.z + (diff.y*cosf(GLKMathRadiansToDegrees(self.rotationY))));
+            Node *child = (Node *)[self.children objectAtIndex:i];
+            child.position = GLKVector3Make(child.position.x + (diff.y*-sinf(self.rotationY)), child.position.y, child.position.z  + (diff.y*cosf(self.rotationY)));
         }
     }
 }
@@ -151,10 +156,13 @@
     
 }
 
+- (void)resetPosition {
+    [self.children removeAllObjects];
+    [self createMaze];
+}
+
 - (void)updateWithDelta:(GLfloat)aDelta {
     [super updateWithDelta:aDelta];
-    //printf("x: %f, y: %f, z: %f \n", self.position.x, self.position.y, self.position.z);
-    printf("rotY: %f \n", self.rotationY);
 }
 
 @end
